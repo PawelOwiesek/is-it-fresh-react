@@ -1,0 +1,37 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 350px;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+  .header {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
+.header__title {
+  grid-column-start: 2;
+  color: #ffffff;
+}
+
+.header__timeString {
+  border: 1px solid #de96a5;
+  max-width: 350px;
+  padding: 10px;
+  margin: 15px;
+  background-color: #008080;
+  color: #ffffff;
+  font-size: 20px;
+  grid-column-start: 3;
+  align-self: start;
+}
+@media (max-width: 600px) {
+  .header__timeString {
+    align-self: center;
+    font-size: 15px;
+  }
+}
