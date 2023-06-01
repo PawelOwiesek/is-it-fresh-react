@@ -1,8 +1,13 @@
+import { useState } from "react";
 import "./style.css";
 
-const Form = ({ title }) => {
+const Form = ({ title, addNewProduct }) => {
+  const [newProduct, setNewProduct] = useState();
+  const [newTimeIn, setNewTimeIn] = useState();
+  const [newTimeOut, setNewTimeOut] = useState();
   const onFormSubmit = (e) => {
     e.preventDefault();
+    addNewProduct(newProduct.trim(), newTimeIn, newTimeOut);
   };
 
   return (
@@ -11,19 +16,37 @@ const Form = ({ title }) => {
       <p>
         <label className="form__products">
           Add a new product:
-          <input className="form__input--text " name="product" required />
+          <input
+            value={newProduct}
+            onChange={({ target }) => setNewProduct(target.value)}
+            className="form__input--text "
+            name="product"
+            required
+          />
         </label>
       </p>
       <p>
         <label className="form__date">
           Set the entry date:
-          <input className="form__input js-dateInput" type="date" required />
+          <input
+            value={newTimeIn}
+            onChange={({ target }) => setNewTimeIn(target.value)}
+            className="form__input js-dateInput"
+            type="date"
+            required
+          />
         </label>
       </p>
       <p>
         <label className="form__date">
           Expiration date:
-          <input className="form__input js-timeLeft" type="date" required />
+          <input
+            value={newTimeOut}
+            onChange={({ target }) => setNewTimeOut(target.value)}
+            className="form__input js-timeLeft"
+            type="date"
+            required
+          />
         </label>
       </p>
       <button className="button js-button">Add product to list.</button>
