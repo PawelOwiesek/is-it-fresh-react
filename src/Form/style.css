@@ -1,7 +1,7 @@
 .form {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100px 100px;
+  grid-template-rows: 30px 50px;
   background-image: url(https://thumbs.dreamstime.com/z/orange-fruit-fresh-cutting-slicing-image-background-52381569.jpg);
   background-size: cover;
   row-gap: 20px;
@@ -23,11 +23,17 @@
   display: grid;
   grid-column-start: 2;
   grid-column-end: 4;
+  align-content: center;
 }
 @media (max-width: 600px) {
   .form__title {
     font-size: 15px;
   }
+}
+.form__paragraph {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 .form__products {

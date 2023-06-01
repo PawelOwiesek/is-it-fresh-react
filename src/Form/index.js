@@ -2,18 +2,19 @@ import { useState } from "react";
 import "./style.css";
 
 const Form = ({ title, addNewProduct }) => {
-  const [newProduct, setNewProduct] = useState();
-  const [newTimeIn, setNewTimeIn] = useState();
-  const [newTimeOut, setNewTimeOut] = useState();
+  const [newProduct, setNewProduct] = useState("");
+  const [newTimeIn, setNewTimeIn] = useState("");
+  const [newTimeOut, setNewTimeOut] = useState("");
   const onFormSubmit = (e) => {
     e.preventDefault();
     addNewProduct(newProduct.trim(), newTimeIn, newTimeOut);
+    setNewProduct("");
   };
 
   return (
     <form onSubmit={onFormSubmit} className="form ">
       <h2 className="form__title">{title}</h2>
-      <p>
+      <p className="form__paragraph">
         <label className="form__products">
           Add a new product:
           <input
@@ -25,7 +26,7 @@ const Form = ({ title, addNewProduct }) => {
           />
         </label>
       </p>
-      <p>
+      <p className="form__paragraph">
         <label className="form__date">
           Set the entry date:
           <input
@@ -37,7 +38,7 @@ const Form = ({ title, addNewProduct }) => {
           />
         </label>
       </p>
-      <p>
+      <p className="form__paragraph">
         <label className="form__date">
           Expiration date:
           <input
