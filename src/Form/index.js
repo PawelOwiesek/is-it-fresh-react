@@ -1,17 +1,17 @@
 import "./style.css";
 
-const Form = () => {
+const Form = ({ title }) => {
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <form className="form js-form">
-      <h2 className="form__title">List of products and the expiration date.</h2>
+    <form onSubmit={onFormSubmit} className="form ">
+      <h2 className="form__title">{title}</h2>
       <p>
         <label className="form__products">
           Add a new product:
-          <input
-            className="form__input--text js-newProduct js-addProduct"
-            name="product"
-            required
-          />
+          <input className="form__input--text " name="product" required />
         </label>
       </p>
       <p>

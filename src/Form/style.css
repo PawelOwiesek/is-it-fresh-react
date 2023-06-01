@@ -48,21 +48,6 @@
   max-width: 200px;
 }
 
-.form__input {
-  margin-left: 10px;
-  margin-right: 10px;
-  font-size: 18px;
-  padding: 5px;
-  max-width: 400px;
-}
-
-@media (max-width: 600px) {
-  .form__input {
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
 .button {
   grid-column-start: 2;
   margin: 0 0 10px 50px;
