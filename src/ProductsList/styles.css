@@ -29,6 +29,21 @@
   }
 }
 
+.form__input {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+  padding: 5px;
+  max-width: 400px;
+}
+
+@media (max-width: 600px) {
+  .form__input {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
 .list__item {
   word-break: break-all;
   background-color: #ffffff;
