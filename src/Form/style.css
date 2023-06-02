@@ -9,7 +9,7 @@
   font-weight: bold;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   .form {
     display: flex;
     flex-direction: column;
@@ -18,14 +18,13 @@
     font-size: 20px;
   }
 }
-
 .form__title {
   display: grid;
   grid-column-start: 2;
   grid-column-end: 4;
   align-content: center;
 }
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .form__title {
     font-size: 15px;
   }
@@ -67,16 +66,10 @@
   align-self: auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .button {
     width: 100vw;
     margin: 10px 0;
-  }
-}
-
-@media (max-width: 1024px) {
-  .button {
-    width: 100vw;
-    margin: 10px 0;
+    background-color: #000000;
   }
 }
