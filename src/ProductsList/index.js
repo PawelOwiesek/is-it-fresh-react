@@ -5,7 +5,7 @@ const ProductsList = ({ products, removeProduct }) => {
   return (
     <ul className="list">
       {products.map((product) => (
-        <React.Fragment key={product.id}>
+        <div className="container" key={product.id}>
           <li className="list__item">{product.product}</li>
           <p className="list__item--dateIn">
             Date in
@@ -24,7 +24,7 @@ const ProductsList = ({ products, removeProduct }) => {
           >
             🗑
           </button>
-        </React.Fragment>
+        </div>
       ))}
     </ul>
   );
