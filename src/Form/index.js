@@ -23,6 +23,7 @@ const Form = ({ title, addNewProduct }) => {
             className="form__input--text "
             name="product"
             required
+            autoFocus
           />
         </label>
       </p>
@@ -32,7 +33,7 @@ const Form = ({ title, addNewProduct }) => {
           <input
             value={newTimeIn}
             onChange={({ target }) => setNewTimeIn(target.value)}
-            className="form__input js-dateInput"
+            className="form__input "
             type="date"
             required
           />
@@ -44,13 +45,13 @@ const Form = ({ title, addNewProduct }) => {
           <input
             value={newTimeOut}
             onChange={({ target }) => setNewTimeOut(target.value)}
-            className="form__input js-timeLeft"
+            className="form__input "
             type="date"
             required
           />
         </label>
       </p>
-      <button className="button js-button">Add product to list.</button>
+      <button className="button ">Add product to list.</button>
     </form>
   );
 };
