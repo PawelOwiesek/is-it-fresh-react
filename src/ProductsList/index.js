@@ -1,13 +1,12 @@
+import React from "react";
 import "./styles.css";
 
 const ProductsList = ({ products, removeProduct }) => {
   return (
     <ul className="list">
       {products.map((product) => (
-        <>
-          <li className="list__item" key={product.id}>
-            {product.product}
-          </li>
+        <React.Fragment key={product.id}>
+          <li className="list__item">{product.product}</li>
           <p className="list__item--dateIn">
             Date in
             <span className="list__item">{product.timeIn}</span>
@@ -25,7 +24,7 @@ const ProductsList = ({ products, removeProduct }) => {
           >
             🗑
           </button>
-        </>
+        </React.Fragment>
       ))}
     </ul>
   );
