@@ -1,18 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./Header";
 import Form from "./Form";
 import ProductsList from "./ProductsList";
 import Clock from "./Clock";
 
 function App() {
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      product: "Tomatoes",
-      timeIn: "2023-06-18 ",
-      timeOut: "2024-06-18 ",
-    },
-  ]);
+  const [products, setProducts] = useState(
+    JSON.parse(localStorage.getItem("products")) || []
+  );
 
   const removeProduct = (id) => {
     setProducts((products) => products.filter((product) => product.id !== id));
@@ -29,6 +24,10 @@ function App() {
       },
     ]);
   };
+
+  useEffect(() => {
+    localStorage.setItem("products", JSON.stringify(products));
+  }, [products]);
 
   return (
     <div>
