@@ -4,10 +4,12 @@ import Form from "./Form";
 import ProductsList from "./ProductsList";
 import Clock from "./Clock";
 
+const localStorageSate = () => {
+  return JSON.parse(localStorage.getItem("products")) || [];
+};
+
 function App() {
-  const [products, setProducts] = useState(
-    JSON.parse(localStorage.getItem("products")) || []
-  );
+  const [products, setProducts] = useState(localStorageSate);
 
   const removeProduct = (id) => {
     setProducts((products) => products.filter((product) => product.id !== id));
