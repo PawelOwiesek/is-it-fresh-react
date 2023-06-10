@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./style.css";
 
 const Form = ({ title, addNewProduct }) => {
@@ -11,6 +11,11 @@ const Form = ({ title, addNewProduct }) => {
     setNewProduct("");
   };
 
+  const inputRef = useRef(null);
+  const setInputFocus = () => {
+    inputRef.current.focus();
+  };
+
   return (
     <form onSubmit={onFormSubmit} className="form ">
       <h2 className="form__title">{title}</h2>
@@ -18,6 +23,7 @@ const Form = ({ title, addNewProduct }) => {
         <label className="form__products">
           Add a new product:
           <input
+            ref={inputRef}
             value={newProduct}
             onChange={({ target }) => setNewProduct(target.value)}
             className="form__input--text "
@@ -51,7 +57,9 @@ const Form = ({ title, addNewProduct }) => {
           />
         </label>
       </p>
-      <button className="button ">Add product to list.</button>
+      <button onClick={setInputFocus} className="button ">
+        Add product to list.
+      </button>
     </form>
   );
 };

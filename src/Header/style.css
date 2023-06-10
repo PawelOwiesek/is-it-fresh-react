@@ -18,7 +18,8 @@
 }
 
 .header__timeString {
-  border: 1px solid #de96a5;
+  display: grid;
+  justify-self: self-end;
   max-width: 350px;
   padding: 10px;
   margin: 15px;
