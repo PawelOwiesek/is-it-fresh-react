@@ -1,35 +1,11 @@
-import { useState, useEffect } from "react";
+import { useProducts } from "./useProducts";
 import Header from "./Header";
 import Form from "./Form";
 import ProductsList from "./ProductsList";
 import Clock from "./Clock";
 
-const localStorageSate = () => {
-  return JSON.parse(localStorage.getItem("products")) || [];
-};
-
 function App() {
-  const [products, setProducts] = useState(localStorageSate);
-
-  const removeProduct = (id) => {
-    setProducts((products) => products.filter((product) => product.id !== id));
-  };
-
-  const addNewProduct = (newProduct, newTimeIn, newTimeOut) => {
-    setProducts((products) => [
-      ...products,
-      {
-        product: newProduct,
-        timeIn: newTimeIn,
-        timeOut: newTimeOut,
-        id: products.length ? products[products.length - 1].id + 1 : 1,
-      },
-    ]);
-  };
-
-  useEffect(() => {
-    localStorage.setItem("products", JSON.stringify(products));
-  }, [products]);
+  const { products, removeProduct, addNewProduct } = useProducts();
 
   return (
     <div>
