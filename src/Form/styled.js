@@ -10,7 +10,7 @@ export const Wrapper = styled.form`
   color: #000000;
   font-weight: bold;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -25,7 +25,7 @@ export const Title = styled.h2`
   grid-column-end: 4;
   align-content: center;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 15px;
   }
 `;
@@ -56,7 +56,7 @@ export const DateInput = styled.input`
   padding: 5px;
   max-width: 150px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     display: flex;
   }
 `;
@@ -65,17 +65,17 @@ export const Button = styled.button`
   grid-column-start: 2;
   margin: 0 0 10px 50px;
   font-size: 18px;
-  background-color: teal;
-  color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.teal};
+  color: ${({ theme }) => theme.colors.white};
   border: none;
   border-radius: 15px;
   padding: 5px;
   max-width: 200px;
   align-self: auto;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     width: 100vw;
     margin: 10px 0;
-    background-color: #000000;
+    background-color: ${({ theme }) => theme.colors.black};
   }
 `;
