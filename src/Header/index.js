@@ -1,11 +1,11 @@
-import "./style.css";
+import { Title, StyledHeader, StyledClock } from "./styled";
 
 const Header = ({ title, clock }) => {
   return (
-    <header className="header ">
-      <h1 className="header__title">{title}</h1>
-      <p className="header__timeString ">{clock}</p>
-    </header>
+    <StyledHeader>
+      <Title>{title}</Title>
+      <StyledClock>{clock}</StyledClock>
+    </StyledHeader>
   );
 };
 

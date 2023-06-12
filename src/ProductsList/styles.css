@@ -42,20 +42,6 @@
   }
 }
 
-.form__input {
-  margin-left: 10px;
-  margin-right: 10px;
-  font-size: 18px;
-  padding: 5px;
-  max-width: 150px;
-}
-
-@media (max-width: 767px) {
-  .form__input {
-    display: flex;
-  }
-}
-
 .list__item {
   word-break: break-all;
   background-color: #ffffff;

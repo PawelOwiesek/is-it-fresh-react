@@ -1,5 +1,13 @@
 import { useRef, useState } from "react";
-import "./style.css";
+import {
+  Wrapper,
+  Title,
+  Paragraph,
+  Label,
+  ProductImput,
+  DateInput,
+  Button,
+} from "./styled.js";
 
 const Form = ({ title, addNewProduct }) => {
   const [newProduct, setNewProduct] = useState("");
@@ -17,50 +25,45 @@ const Form = ({ title, addNewProduct }) => {
   };
 
   return (
-    <form onSubmit={onFormSubmit} className="form ">
-      <h2 className="form__title">{title}</h2>
-      <p className="form__paragraph">
-        <label className="form__products">
+    <Wrapper onSubmit={onFormSubmit}>
+      <Title>{title}</Title>
+      <Paragraph>
+        <Label>
           Add a new product:
-          <input
+          <ProductImput
             ref={inputRef}
             value={newProduct}
             onChange={({ target }) => setNewProduct(target.value)}
-            className="form__input--text "
             name="product"
             required
             autoFocus
           />
-        </label>
-      </p>
-      <p className="form__paragraph">
-        <label className="form__date">
+        </Label>
+      </Paragraph>
+      <Paragraph>
+        <Label>
           Set the entry date:
-          <input
+          <DateInput
             value={newTimeIn}
             onChange={({ target }) => setNewTimeIn(target.value)}
-            className="form__input "
             type="date"
             required
           />
-        </label>
-      </p>
-      <p className="form__paragraph">
-        <label className="form__date">
+        </Label>
+      </Paragraph>
+      <Paragraph>
+        <Label>
           Expiration date:
-          <input
+          <DateInput
             value={newTimeOut}
             onChange={({ target }) => setNewTimeOut(target.value)}
-            className="form__input "
             type="date"
             required
           />
-        </label>
-      </p>
-      <button onClick={setInputFocus} className="button ">
-        Add product to list.
-      </button>
-    </form>
+        </Label>
+      </Paragraph>
+      <Button onClick={setInputFocus}>Add product to list.</Button>
+    </Wrapper>
   );
 };
 

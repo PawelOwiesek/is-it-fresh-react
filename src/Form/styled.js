@@ -1,4 +1,6 @@
-.form {
+import styled from "styled-components";
+
+export const Wrapper = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 30px 50px;
@@ -7,53 +9,59 @@
   row-gap: 20px;
   color: #000000;
   font-weight: bold;
-}
 
-@media (max-width: 1024px) {
-  .form {
+  @media (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
     font-size: 20px;
   }
-}
-.form__title {
+`;
+
+export const Title = styled.h2`
   display: grid;
   grid-column-start: 2;
   grid-column-end: 4;
   align-content: center;
-}
-@media (max-width: 767px) {
-  .form__title {
+
+  @media (max-width: 767px) {
     font-size: 15px;
   }
-}
-.form__paragraph {
+`;
+
+export const Paragraph = styled.p`
   display: flex;
   align-content: center;
   flex-wrap: wrap;
-}
+`;
 
-.form__products {
+export const Label = styled.label`
   font-size: 20px;
   padding-left: 10px;
   color: #040404;
-}
+`;
 
-.form__date {
-  font-size: 20px;
-  padding-left: 10px;
-}
-
-.form__input--text {
+export const ProductImput = styled.input`
   margin-left: 10px;
   font-size: 18px;
   padding: 5px;
   max-width: 200px;
-}
+`;
 
-.button {
+export const DateInput = styled.input`
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+  padding: 5px;
+  max-width: 150px;
+
+  @media (max-width: 767px) {
+    display: flex;
+  }
+`;
+
+export const Button = styled.button`
   grid-column-start: 2;
   margin: 0 0 10px 50px;
   font-size: 18px;
@@ -64,12 +72,10 @@
   padding: 5px;
   max-width: 200px;
   align-self: auto;
-}
 
-@media (max-width: 767px) {
-  .button {
+  @media (max-width: 767px) {
     width: 100vw;
     margin: 10px 0;
     background-color: #000000;
   }
-}
+`;
