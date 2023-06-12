@@ -1,27 +1,6 @@
-.container {
-  display: grid;
-  grid-template-columns: 150px 250px 250px 200px 50px;
-  border-bottom: 2px solid #b5acac;
-  margin: 10px;
-  padding: 5px;
-}
-@media (max-width: 1024px) {
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-}
+import styled from "styled-components";
 
-@media (max-width: 767px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-
-.list {
+export const List = styled.ul`
   display: grid;
   column-gap: 10px;
   border: 2px solid black;
@@ -29,20 +8,38 @@
   background-color: hsl(180, 100%, 20%);
   font-size: 20px;
   padding: 0;
-}
 
-@media (max-width: 1024px) {
-  .list {
+  @media (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 95%;
+    max-width: 95%;
     margin: 10px;
     padding: 5px;
   }
-}
+`;
 
-.list__item {
+export const ItemWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 170px 250px 250px 200px 50px;
+  border-bottom: 2px solid #b5acac;
+  margin: 10px;
+  padding: 5px;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+`;
+
+export const Item = styled.li`
   word-break: break-all;
   background-color: #ffffff;
   list-style: none;
@@ -52,32 +49,26 @@
   width: 150px;
   font-size: 18px;
   margin: 5px;
-}
-@media (max-width: 767px) {
-  .list__item {
-    display: block;
-    width: 80vw;
-  }
-}
 
-.list__item--exDate,
-.list__item--dateIn {
+  @media (max-width: 767px) {
+    display: block;
+    width: 70vw;
+  }
+`;
+
+export const EntryDate = styled.p`
   grid-column-start: 2;
   max-width: fit-content;
   margin: 20px;
-}
+`;
 
-@media (max-width: 767px) {
-  .list__item--exDate,
-  .list__item--dateIn {
-    max-width: 80vw;
-  }
-}
-.list__item--exDate {
+export const ExpDate = styled.p`
   grid-column-start: 3;
-}
+  max-width: fit-content;
+  margin: 20px;
+`;
 
-.list__item--timeFlow {
+export const Timer = styled.span`
   grid-column-start: 4;
   max-width: fit-content;
   text-align: center;
@@ -85,26 +76,24 @@
   background-color: #fff;
   padding: 5px;
   font-size: 18px;
-}
 
-@media (max-width: 767px) {
-  .list__item--timeFlow {
+  @media (max-width: 767px) {
     text-align: start;
     max-width: 80vw;
   }
-}
-.removeButton {
+`;
+
+export const Button = styled.button`
   margin-top: 15px;
   height: 30px;
   width: 30px;
   background-color: #f80101;
   color: #ffffff;
-}
-@media (max-width: 767px) {
-  .removeButton {
+
+  @media (max-width: 767px) {
     margin-bottom: 30px;
     margin-top: 5px;
     width: 100px;
     align-self: center;
   }
-}
+`;

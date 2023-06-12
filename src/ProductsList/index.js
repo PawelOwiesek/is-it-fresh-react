@@ -1,32 +1,34 @@
-import React from "react";
-import "./styles.css";
+import {
+  List,
+  ItemWrapper,
+  Item,
+  EntryDate,
+  ExpDate,
+  Timer,
+  Button,
+} from "./styled";
 
 const ProductsList = ({ products, removeProduct }) => {
   return (
-    <ul className="list">
+    <List>
       {products.map((product) => (
-        <div className="container" key={product.id}>
-          <li className="list__item">{product.product}</li>
-          <p className="list__item--dateIn">
+        <ItemWrapper key={product.id}>
+          <Item>{product.product}</Item>
+          <EntryDate>
             Date in
-            <span className="list__item">{product.timeIn}</span>
-          </p>
-          <p className="list__item--exDate">
+            <Item as="span">{product.timeIn}</Item>
+          </EntryDate>
+          <ExpDate>
             Date out
-            <span className="list__item">{product.timeOut}</span>
-          </p>
+            <Item as="span">{product.timeOut}</Item>
+          </ExpDate>
           <p>
-            <span className="list__item--timeFlow">Time Flow</span>
+            <Timer>Time Flow</Timer>
           </p>
-          <button
-            onClick={() => removeProduct(product.id)}
-            className="removeButton"
-          >
-            🗑
-          </button>
-        </div>
+          <Button onClick={() => removeProduct(product.id)}>🗑</Button>
+        </ItemWrapper>
       ))}
-    </ul>
+    </List>
   );
 };
 
